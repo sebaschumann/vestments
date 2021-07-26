@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vestments</h1>
+
+
+<form method="GET" action="/vestments">
+  Nombre o apellido del conductor: <input type="text" name="filter" />
+  Descripcion: <input type="text" name="filter2" />
+  Numero Transmision: <input type="text" name="filter3" />
+  <input type="submit" />
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Emmision</th>
+      <th>Host</th>
+      <th>Garment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vestments.each do |vestment| %>
+      <tr>
+        <td><%= vestment.emmision.number %></td>
+        <td><%= vestment.host.full_name %></td>
+        <td><%= vestment.garment.garmentdetails %></td>
+        <td><%= link_to 'Show', vestment %></td>
+        <td><%= link_to 'Edit', edit_vestment_path(vestment) %></td>
+        <td><%= link_to 'Destroy', vestment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vestment', new_vestment_path %>

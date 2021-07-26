@@ -1,0 +1,27 @@
+<%= form_with(model: emmision) do |form| %>
+  <% if emmision.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(emmision.errors.count, "error") %> prohibited this emmision from being saved:</h2>
+
+      <ul>
+        <% emmision.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

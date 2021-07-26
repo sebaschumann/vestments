@@ -1,0 +1,32 @@
+<%= form_with(model: vestment) do |form| %>
+  <% if vestment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vestment.errors.count, "error") %> prohibited this vestment from being saved:</h2>
+
+      <ul>
+        <% vestment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :emmision_id %>
+    <%= form.collection_select(:emmision_id, Emmision.all, :id, :numberdate) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :host_id %>
+    <%= form.collection_select(:host_id, Host.all, :id, :full_name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :garment_id %>
+    <%= form.collection_select(:garment_id, Garment.all, :id, :garmentdetails) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Emmisions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @emmisions.each do |emmision| %>
+      <tr>
+        <td><%= emmision.number %></td>
+        <td><%= emmision.date %></td>
+        <td><%= link_to 'Show', emmision %></td>
+        <td><%= link_to 'Edit', edit_emmision_path(emmision) %></td>
+        <td><%= link_to 'Destroy', emmision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @emmisions %>
+<br>
+
+<%= link_to 'New Emmision', new_emmision_path %>

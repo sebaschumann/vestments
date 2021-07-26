@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  color: MyString
+  description: MyText
+  brand: one
+  garment_type: one
+
+two:
+  color: MyString
+  description: MyText
+  brand: two
+  garment_type: two

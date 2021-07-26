@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @emmision.number %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @emmision.date %>
+</p>
+
+<%= link_to 'Edit', edit_emmision_path(@emmision) %> |
+<%= link_to 'Back', emmisions_path %>

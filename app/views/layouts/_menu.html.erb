@@ -1,0 +1,76 @@
+
+
+
+  <li class="btn btn-warning"">
+    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+  </li>
+
+
+    <li class="btn btn-warning"">
+      <a class="nav-link active" aria-current="page" href="/brands">Marcas</a>
+    </li>
+    <li class="btn btn-warning"">
+    <a class="nav-link active" aria-current="page" href="/garment_types">Tipo de Prendas</a>
+  </li>
+
+    <li class="btn btn-warning"">
+      <a class="nav-link active" aria-current="page" href="/garments">Prendas</a>
+    </li>
+
+    <li class="btn btn-warning"">
+      <a class="nav-link active" aria-current="page" href="/vestments">Vestimentas</a>
+    </li>
+
+      <li class="btn btn-warning"">
+        <a class="nav-link active" aria-current="page" href="/emmisions">Emisiones</a>
+      </li>
+
+        <li class="btn btn-warning"">
+          <a class="nav-link active" aria-current="page" href="/hosts">Conductores</a>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="collapse navbar-collapse show" id="navbarWithDropdown">
+  <ul class="navbar-nav">
+    <% if user_signed_in? %>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle btn btn-secondary " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span style="color:white"><strong><%= "Welcome" %>, </strong><%= current_user.username %></span>
+      </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><%= link_to "Editar Perfil", edit_user_registration_path, class: "btn" %></li>
+          <hr>
+          <li><%= link_to "Cerrar Sesión", destroy_user_session_path, class: "btn",  method: :delete  %></li>
+        </ul>
+      </li>
+      <% else %>
+        <%= link_to "Iniciar Sesión", new_user_session_url, class: 'btn btn-success' %>
+    <% end %>
+  </ul>
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-light" type="submit">Search</button>
+  </form>
+</div>
+
+<div class="card">
+        <code>
+          <strong>For Testing Purpouses:</strong>
+          <hr>
+          User Signed IN?: <%= user_signed_in? %>
+          <hr>
+          Current User: <%= current_user.inspect %>
+          <hr>
+          Can Manage ALL? <%= can? :manage, :all %><br>
+        <!--  Can Manage Host? <%= can? :manage, Host %><br> -->
+        </code>
+      </div>

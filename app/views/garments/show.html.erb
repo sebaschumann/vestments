@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @garment.color %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @garment.description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @garment.brand_id %>
+</p>
+
+<p>
+  <strong>Garment type:</strong>
+  <%= @garment.garment_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_garment_path(@garment) %> |
+<%= link_to 'Back', garments_path %>

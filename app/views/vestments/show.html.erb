@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Emmision:</strong>
+  <%= @vestment.emmision_id %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @vestment.host_id %>
+</p>
+
+<p>
+  <strong>Garment:</strong>
+  <%= @vestment.garment_id %>
+</p>
+
+<%= link_to 'Edit', edit_vestment_path(@vestment) %> |
+<%= link_to 'Back', vestments_path %>
